@@ -1,0 +1,9 @@
+*.iml
+/FarmSafe/.gradle
+/FarmSafe/local.properties
+/FarmSafe/.idea/workspace.xml
+/FarmSafe/.idea/libraries
+/FarmSafe/.DS_Store
+/FarmSafe/build
+/FarmSafe/captures
+/FarmSafe/.externalNativeBuild
