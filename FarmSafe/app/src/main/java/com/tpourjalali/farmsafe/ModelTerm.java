@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.tpourjalali.farmsafe.database.CourseCursorWrapper;
 import com.tpourjalali.farmsafe.database.CourseDbSchema.CourseTable;
 import com.tpourjalali.farmsafe.database.DataBaseHelper;
+import com.tpourjalali.farmsafe.database.TermCursorWrapper;
+import com.tpourjalali.farmsafe.database.TermDbSchema;
+import com.tpourjalali.farmsafe.database.TermDbSchema.TermTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,32 +30,35 @@ public class ModelTerm {
 //        mCourses = new ArrayList<>();
     }
 
-    private ContentValues getContentValues(Course c) {
+    private ContentValues getContentValues(Term t) {
         ContentValues values = new ContentValues();
-        values.put(CourseTable.Cols.LANGUAGE, c.getCourseLanguage().toString());
-        values.put(CourseTable.Cols.COURSE_NAME, c.getCourseName());
+        values.put(TermTable.Cols.DEFINITION, t.getDefinition());
+        values.put(TermTable.Cols.IMAGE_ID, t.getImageResourceId());
+        values.put(TermTable.Cols.LANGUAGE, t.getLanguage().toString());
+        values.put(TermTable.Cols.TERM, t.getTerm());
+        values.put(TermTable.Cols.TERM_ID, t.getId());
 
         return values;
     }
 
-    public void addCourse(Course c) {
-        ContentValues values = getContentValues(c);
+    public void addTerm(Term t) {
+        ContentValues values = getContentValues(t);
 
-        mDatabase.insert(CourseTable.NAME, null, values);
+        mDatabase.insert(TermTable.NAME, null, values);
     }
 
-    public void updateCourse(Course c) {
-        String nameString = c.getCourseName();
-        ContentValues values = getContentValues(c);
+    public void updateTerm(Term t) { //find term to update using term name as a nameString, but may want to use termId in the future
+        String nameString = t.getTerm();
+        ContentValues values = getContentValues(t);
 
-        mDatabase.update(CourseTable.NAME, values,
-                CourseTable.Cols.COURSE_NAME + " = ?",
+        mDatabase.update(TermTable.NAME, values,
+                TermTable.Cols.TERM + " = ?",
                 new String[] { nameString });
     }
 
-    private CourseCursorWrapper queryCourses(String whereClause, String[] whereArgs) {
+    private TermCursorWrapper queryTerms(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
-                CourseTable.NAME,
+                TermTable.NAME,
                 null,
                 whereClause,
                 whereArgs,
@@ -61,30 +67,30 @@ public class ModelTerm {
                 null
         );
 
-        return new CourseCursorWrapper(cursor);
+        return new TermCursorWrapper(cursor);
     }
 
-    public List<Course>getCourses() {
-        List<Course> courses = new ArrayList<>();
+    public List<Term>getTerms() {
+        List<Term> terms = new ArrayList<>();
 
-        CourseCursorWrapper cursor = queryCourses(null, null);
+        TermCursorWrapper cursor = queryTerms(null, null);
 
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                courses.add(cursor.getCourse());
+                terms.add(cursor.getTerm());
                 cursor.moveToNext();
             }
         } finally {
             cursor.close();
         }
-        return courses;
+        return terms;
     }
 
-    public Course getCourse(String courseName) {
-        CourseCursorWrapper cursor = queryCourses(
-                CourseTable.Cols.COURSE_NAME + " = ?",
-                new String[] { courseName }
+    public Term getTerm(String termName) {
+        TermCursorWrapper cursor = queryTerms(
+                TermTable.Cols.TERM + " = ?",
+                new String[] { termName }
         );
 
         try {
@@ -93,7 +99,7 @@ public class ModelTerm {
             }
 
             cursor.moveToFirst();
-            return cursor.getCourse();
+            return cursor.getTerm();
         } finally {
             cursor.close();
         }

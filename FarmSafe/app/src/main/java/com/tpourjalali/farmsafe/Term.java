@@ -40,6 +40,12 @@ public class Term {
          mLanguage = language;
     }
 
+    public void setTermName(String termName) { mTerm = termName; }
+
+    public void setDefinition(String definition) { mDefinition = definition; }
+
+    public void setImageId(int imageId) { mImageId = imageId; }
+
     public String getTerm() {
         return mTerm;
     }
