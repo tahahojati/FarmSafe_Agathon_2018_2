@@ -28,12 +28,12 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/tile1Button"
+                android:id="@+id/courses_button"
                 android:layout_width="@dimen/main_menu_tile_height"
                 android:layout_height="@dimen/main_menu_tile_height"
+                android:backgroundTint="@color/tileColor"
                 android:gravity="center_vertical|center_horizontal"
-                android:src="@drawable/ic_course_icon_100dp"
-                android:backgroundTint="@color/tileColor"/>
+                android:src="@drawable/ic_course_icon_100dp" />
 
             <TextView
                 android:id="@+id/tile1Text"
@@ -48,13 +48,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <ImageButton
-            android:id="@+id/tile2Button"
-            android:layout_width="@dimen/main_menu_tile_height"
-            android:layout_height="@dimen/main_menu_tile_height"
-            android:src="@drawable/ic_library_icon_100dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:backgroundTint="@color/tileColor"/>
+
+            <ImageButton
+                android:id="@+id/glossary_button"
+                android:layout_width="@dimen/main_menu_tile_height"
+                android:layout_height="@dimen/main_menu_tile_height"
+                android:backgroundTint="@color/tileColor"
+                android:gravity="center_vertical|center_horizontal"
+                android:src="@drawable/ic_library_icon_100dp" />
 
             <TextView
                 android:id="@+id/tile2Text"
@@ -70,12 +71,12 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/tile3Button"
+                android:id="@+id/faq_button"
                 android:layout_width="@dimen/main_menu_tile_height"
                 android:layout_height="@dimen/main_menu_tile_height"
-                android:src="@drawable/ic_faq_icon_100dp"
+                android:backgroundTint="@color/tileColor"
                 android:gravity="center_vertical|center_horizontal"
-                android:backgroundTint="@color/tileColor"/>
+                android:src="@drawable/ic_faq_icon_100dp" />
 
             <TextView
                 android:id="@+id/tile3Text"
@@ -91,7 +92,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/tile4Button"
+                android:id="@+id/ask_button"
                 android:layout_width="@dimen/main_menu_tile_height"
                 android:layout_height="@dimen/main_menu_tile_height"
                 android:backgroundTint="@color/tileColor"
@@ -109,13 +110,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <ImageButton
-            android:id="@+id/tile5Button"
-            android:layout_width="@dimen/main_menu_tile_height"
-            android:layout_height="@dimen/main_menu_tile_height"
-            android:src="@drawable/ic_test_icon_100dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:backgroundTint="@color/tileColor"/>
+
+            <ImageButton
+                android:id="@+id/test_button"
+                android:layout_width="@dimen/main_menu_tile_height"
+                android:layout_height="@dimen/main_menu_tile_height"
+                android:backgroundTint="@color/tileColor"
+                android:gravity="center_vertical|center_horizontal"
+                android:src="@drawable/ic_test_icon_100dp" />
 
             <TextView
                 android:id="@+id/tile5Text"

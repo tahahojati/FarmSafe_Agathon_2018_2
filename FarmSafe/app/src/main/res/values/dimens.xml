@@ -4,4 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="main_menu_tile_width">130dp</dimen>
     <dimen name="main_menu_tile_height">130dp</dimen>
+    <dimen name="row_height_md">100dp </dimen>
+    <dimen name="row_md_padding">10dp</dimen>
+    <dimen name="thumbnail_sm_width">90dp</dimen>
 </resources>
