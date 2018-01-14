@@ -35,4 +35,13 @@ public class ModelCourse {
 
         mDatabase.insert(CourseDbSchema.CourseTable.NAME, null, values);
     }
+
+    public void updateCourse(Course c) {
+        String nameString = c.getCourseName();
+        ContentValues values = getContentValues(c);
+
+        mDatabase.update(CourseDbSchema.CourseTable.NAME, values,
+                CourseDbSchema.CourseTable.Cols.COURSE_NAME + " = ?",
+                new String[] { nameString });
+    }
 }

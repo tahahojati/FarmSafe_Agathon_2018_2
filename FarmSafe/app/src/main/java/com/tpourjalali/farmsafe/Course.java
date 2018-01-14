@@ -19,12 +19,9 @@ public class Course {
 //
 //    }
 
-
-
     public String getCourseLanguage() {
         return mCourseLanguage;
     }
-
 
     public String getCourseName() {
         return mCourseName;
