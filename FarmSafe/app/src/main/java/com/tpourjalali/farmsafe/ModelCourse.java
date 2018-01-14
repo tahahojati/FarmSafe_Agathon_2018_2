@@ -6,7 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.tpourjalali.farmsafe.database.CourseBaseHelper;
+import com.tpourjalali.farmsafe.database.CourseCursorWrapper;
 import com.tpourjalali.farmsafe.database.CourseDbSchema;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mschultz on 1/13/2018.
@@ -46,7 +50,7 @@ public class ModelCourse {
                 new String[] { nameString });
     }
 
-    private Cursor queryCourses(String whereClause, String[] whereArgs) {
+    private CourseCursorWrapper queryCourses(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
                 CourseDbSchema.CourseTable.NAME,
                 null,
@@ -57,6 +61,41 @@ public class ModelCourse {
                 null
         );
 
-        return cursor;
+        return new CourseCursorWrapper(cursor);
+    }
+
+    public List<Course>getCourses() {
+        List<Course> courses = new ArrayList<>();
+
+        CourseCursorWrapper cursor = queryCourses(null, null);
+
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                courses.add(cursor.getCourse());
+                cursor.moveToNext();
+            }
+        } finally {
+            cursor.close();
+        }
+        return courses;
+    }
+
+    public Course getCourse(String courseName) {
+        CourseCursorWrapper cursor = queryCourses(
+                CourseDbSchema.CourseTable.Cols.COURSE_NAME + " = ?",
+                new String[] { courseName }
+        );
+
+        try {
+            if (cursor.getCount() == 0) {
+                return null;
+            }
+
+            cursor.moveToFirst();
+            return cursor.getCourse();
+        } finally {
+            cursor.close();
+        }
     }
 }
