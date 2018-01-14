@@ -2,6 +2,7 @@ package com.tpourjalali.farmsafe;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.tpourjalali.farmsafe.database.CourseBaseHelper;
@@ -43,5 +44,19 @@ public class ModelCourse {
         mDatabase.update(CourseDbSchema.CourseTable.NAME, values,
                 CourseDbSchema.CourseTable.Cols.COURSE_NAME + " = ?",
                 new String[] { nameString });
+    }
+
+    private Cursor queryCourses(String whereClause, String[] whereArgs) {
+        Cursor cursor = mDatabase.query(
+                CourseDbSchema.CourseTable.NAME,
+                null,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                null
+        );
+
+        return cursor;
     }
 }
