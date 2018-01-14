@@ -1,7 +1,10 @@
 package com.tpourjalali.farmsafe.database;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
+
+import com.tpourjalali.farmsafe.database.CourseDbSchema.CourseTable;
 
 /**
  * Created by mschultz on 1/13/2018.
@@ -17,7 +20,12 @@ public class CourseBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL("create table " + CourseTable.NAME + "(" +
+            " _id integer primary key autoincrement, " +
+            CourseTable.Cols.COURSE_ID + ", " +
+            CourseTable.Cols.LANGUAGE +
+            ")"
+        );
     }
 
     @Override
