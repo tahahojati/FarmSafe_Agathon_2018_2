@@ -13,9 +13,12 @@ import java.util.List;
 
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.LanguageViewHolder> {
     private List<LanguageRow> languageList;
+    private OnItemClickListener listener;
 
-    public LanguageAdapter(List<LanguageRow> languageList) {
+    public LanguageAdapter(List<LanguageRow> languageList, OnItemClickListener listener) {
+        this.listener = listener;
         this.languageList = languageList;
+
     }
 
     public class LanguageViewHolder extends RecyclerView.ViewHolder {
@@ -25,6 +28,15 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langua
             super(view);
             lang = (TextView) view.findViewById(R.id.lang);
 
+        }
+
+        public void bind(final LanguageRow row, final OnItemClickListener listener){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onItemClick(row);
+                }
+            });
         }
     }
 
@@ -39,6 +51,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langua
     public void onBindViewHolder(LanguageViewHolder holder, int position) {
         LanguageRow row = languageList.get(position);
         holder.lang.setText(row.getRowString());
+        holder.bind(row, listener);
 
     }
 

@@ -37,15 +37,15 @@ public class LanguageFragment extends Fragment {
         View V = inflater.inflate(R.layout.fragment_language, container, false);
 
         List<LanguageRow> languageList = new ArrayList<>();
-        languageList.add(new LanguageRow("English"));
-        languageList.add(new LanguageRow("Español"));
-        languageList.add(new LanguageRow("ไทย (Thai)"));
-        languageList.add(new LanguageRow("中文 (Chinese)"));
-        languageList.add(new LanguageRow("Hawaiian"));
-        languageList.add(new LanguageRow("日本 (Japanese)"));
+        languageList.add(new LanguageRow("English","en"));
+        languageList.add(new LanguageRow("Español","es"));
+        languageList.add(new LanguageRow("ไทย (Thai)","th"));
+        languageList.add(new LanguageRow("中文 (Chinese)","zh"));
+        languageList.add(new LanguageRow("Hawaiian","hi"));
+        languageList.add(new LanguageRow("日本 (Japanese)","jp"));
 
         mRecyclerView = V.findViewById(R.id.language_recycler);
-        mAdapter = new LanguageAdapter(languageList);
+        mAdapter = new LanguageAdapter(languageList, new LanguageAdapter.OnItemClickListener() );
         mLayoutManager = new LinearLayoutManager(getActivity());
 
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
