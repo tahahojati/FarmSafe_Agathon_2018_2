@@ -13,6 +13,7 @@ public class CourseDbSchema {
             public static final String LANGUAGE = "language";
             public static final String COURSE_NAME = "course_name";
             public static final String SECTIONS = "sections";
+//            public static final String IMAGE_ID = "image_id";
         }
     }
 }
