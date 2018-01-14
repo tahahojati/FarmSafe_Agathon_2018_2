@@ -11,16 +11,16 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".GlossaryActivity"
             android:label="@string/main_menu_tile2_name"/>
 
         <activity android:name=".LanguageActivity"
             android:label="@string/language">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".CoursesActivity"
             android:label="Courses"/>
