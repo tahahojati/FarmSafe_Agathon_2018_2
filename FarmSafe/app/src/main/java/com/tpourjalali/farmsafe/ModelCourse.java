@@ -4,7 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.util.TypedValue;
 
 import com.tpourjalali.farmsafe.database.DataBaseHelper;
 import com.tpourjalali.farmsafe.database.CourseCursorWrapper;
@@ -30,7 +32,12 @@ public class ModelCourse {
         }
         return mInstance;
     }
-
+    public int getCourseImageResourceId(Course course){
+        int id = course.getId();
+        TypedValue typedValue = new TypedValue();
+        mContext.getResources().getValue("course_"+id+"_thumbnail", typedValue ,true );
+        return typedValue.resourceId;
+    };
     private ModelCourse(Context context) {
         mContext = context.getApplicationContext();
         mDatabase = new DataBaseHelper(mContext)

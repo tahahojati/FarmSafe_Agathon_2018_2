@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tpourjalali.farmsafe">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,18 +13,20 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".GlossaryActivity"
-            android:label="Glossary" />
-        <activity android:name=".CoursesActivity" />
-        <activity
-            android:name=".CourseActivity"
-            android:label="@string/title_activity_course"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GlossaryActivity"
+            android:label="@string/main_menu_tile2_name"/>
+
+        <activity android:name=".LanguageActivity"
+            android:label="@string/language">
+        </activity>
+        <activity android:name=".CoursesActivity"
+            android:label="Courses"/>
+        <activity android:name=".CourseActivity"
+            android:label="Course"/>
+
     </application>
 
 </manifest>

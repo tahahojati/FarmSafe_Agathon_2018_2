@@ -70,7 +70,7 @@ public class CoursesFragment extends Fragment {
         public void bindCourse(Course course){
             mCourse = course;
             mCourseTitle.setText(course.getCourseName());
-            int drawableId = course.getImageResourceId();
+            int drawableId = mCourseModel.getCourseImageResourceId(course);
             Drawable thumbnail = null;
             try {
                 thumbnail = getResources().getDrawable(drawableId);
@@ -116,7 +116,7 @@ public class CoursesFragment extends Fragment {
         }
         @Override
         public void onClick(View v) {
-            Intent i = new Intent(getActivity(), )
+            //Intent i = new Intent(getActivity(), )
         }
     }
 }

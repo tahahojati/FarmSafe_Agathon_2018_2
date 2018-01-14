@@ -18,10 +18,6 @@ public class Course {
         mCourseName = courseName;
     }
 
-    public int getImageResourceId(){
-        return 0;
-    }
-
     public int getId() {
         return mId;
     }
