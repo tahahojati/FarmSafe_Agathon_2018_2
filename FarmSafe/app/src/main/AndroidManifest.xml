@@ -19,7 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".GlossaryActivity"
-            android:label="Glossary"/>
+            android:label="@string/main_menu_tile2_name"/>
+
+        <activity android:name=".LanguageActivity"
+            android:label="@string/language">
+        </activity>
     </application>
 
 </manifest>

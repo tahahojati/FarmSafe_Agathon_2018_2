@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">聪明的农民</string>
+    <string name="main_menu_screen_title">主菜单</string>
+    <string name="main_menu_tile1_name">课程</string>
+    <string name="main_menu_tile2_name">图书馆</string>
+    <string name="main_menu_tile3_name">经常问的问题</string>
+    <string name="main_menu_tile4_name">询问专家</string>
+    <string name="main_menu_tile5_name">测试自己</string>
+
+
+    <string name="courses_screen_title">Courses</string>
+    <string name="faq_screen_title">Frequently Asked Questions</string>
+    <string name="library_screen_title">Library</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
