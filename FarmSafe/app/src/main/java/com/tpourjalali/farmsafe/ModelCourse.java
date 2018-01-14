@@ -2,6 +2,7 @@ package com.tpourjalali.farmsafe;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
@@ -32,11 +33,16 @@ public class ModelCourse {
         }
         return mInstance;
     }
-    public int getCourseImageResourceId(Course course){
+    public Integer getCourseImageResourceId(Course course){
         int id = course.getId();
         TypedValue typedValue = new TypedValue();
-        mContext.getResources().getValue("course_"+id+"_thumbnail", typedValue ,true );
-        return typedValue.resourceId;
+        try {
+            mContext.getResources().getValue("course_" + id + "_thumbnail", typedValue, true);
+            return new Integer(typedValue.resourceId);
+        } catch (Resources.NotFoundException e){
+            Log.e(TAG, "Thumbnail image not found  course_"+id+"_thumbnail");
+            return null;
+        }
     };
     private ModelCourse(Context context) {
         mContext = context.getApplicationContext();
