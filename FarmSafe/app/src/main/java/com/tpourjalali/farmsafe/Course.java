@@ -21,12 +21,6 @@ public class Course {
         return mId;
     }
 
-    //    private List<Course> mCourses;
-
-//    public static Course get(Context context) {
-//
-//    }
-
     public Course(String courseName) {
         mCourseName = courseName;
     }
