@@ -11,91 +11,119 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Welcome"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_gravity="left"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="James Smith"
-                android:textColor="@android:color/holo_red_light" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:singleLine="true"
-                android:text="Resume learning: Good Agricultural Practices "
-                android:textColor="@android:color/holo_blue_dark" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Keep reading: Pesticde brands"
-                android:textColor="@android:color/holo_blue_dark" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Your question: how to farm?"
-                android:textColor="@android:color/holo_blue_dark" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Change Language" />
-        </LinearLayout>
-    </LinearLayout>
+        android:text="@string/main_menu_screen_title"
+        android:textSize="24sp" />
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal|fill_horizontal"
+        android:id="@+id/main_menu_gridlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:columnCount="2">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:text="Courses" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:text="Library" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:text="Questions" />
+            <ImageButton
+                android:id="@+id/tile1Button"
+                android:layout_width="@dimen/main_menu_tile_height"
+                android:layout_height="@dimen/main_menu_tile_height"
+                android:gravity="center_vertical|center_horizontal"
+                android:src="@drawable/ic_course_icon_100dp"
+                android:backgroundTint="@color/tileColor"/>
 
-        <Button
-            android:id="@+id/button2"
+            <TextView
+                android:id="@+id/tile1Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/main_menu_tile1_name"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/tile2Button"
+            android:layout_width="@dimen/main_menu_tile_height"
+            android:layout_height="@dimen/main_menu_tile_height"
+            android:src="@drawable/ic_library_icon_100dp"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Live Help" />
+            android:backgroundTint="@color/tileColor"/>
+
+            <TextView
+                android:id="@+id/tile2Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/main_menu_tile2_name"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/tile3Button"
+                android:layout_width="@dimen/main_menu_tile_height"
+                android:layout_height="@dimen/main_menu_tile_height"
+                android:src="@drawable/ic_faq_icon_100dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:backgroundTint="@color/tileColor"/>
+
+            <TextView
+                android:id="@+id/tile3Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/main_menu_tile3_name"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/tile4Button"
+                android:layout_width="@dimen/main_menu_tile_height"
+                android:layout_height="@dimen/main_menu_tile_height"
+                android:backgroundTint="@color/tileColor"
+                android:gravity="center_vertical|center_horizontal"
+                android:src="@drawable/ic_askexpert_icon_100dp" />
+
+            <TextView
+                android:id="@+id/tile4Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/main_menu_tile4_name"
+                android:textAlignment="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/tile5Button"
+            android:layout_width="@dimen/main_menu_tile_height"
+            android:layout_height="@dimen/main_menu_tile_height"
+            android:src="@drawable/ic_test_icon_100dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:backgroundTint="@color/tileColor"/>
+
+            <TextView
+                android:id="@+id/tile5Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="false"
+                android:text="@string/main_menu_tile5_name"
+                android:textAlignment="center" />
+        </LinearLayout>
     </GridLayout>
 </LinearLayout>

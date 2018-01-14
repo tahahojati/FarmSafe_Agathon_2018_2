@@ -11,10 +11,10 @@ import android.view.ViewGroup;
  * Created by ProfessorTaha on 1/13/2018.
  */
 
-public class FramentHome extends Fragment{
-    public static FramentHome newInstance() {
+public class HomeFragment extends Fragment{
+    public static HomeFragment newInstance() {
         //Bundle args = new Bundle();
-        FramentHome fragment = new FramentHome();
+        HomeFragment fragment = new HomeFragment();
         //fragment.setArguments(args);
         return fragment;
     }
