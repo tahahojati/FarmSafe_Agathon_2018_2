@@ -19,6 +19,10 @@ public class Term {
         mImageId = imageId;
     }
 
+    public Term(int id) {
+        mId = id;
+    }
+
     public int getImageResourceId(){
         //TODO: implement
         return R.drawable.ic_dashboard_black_24dp;
@@ -31,6 +35,16 @@ public class Term {
     public Language getLanguage() {
         return mLanguage;
     }
+
+    public void setLanguage(Language language) {
+         mLanguage = language;
+    }
+
+    public void setTermName(String termName) { mTerm = termName; }
+
+    public void setDefinition(String definition) { mDefinition = definition; }
+
+    public void setImageId(int imageId) { mImageId = imageId; }
 
     public String getTerm() {
         return mTerm;
