@@ -1,6 +1,7 @@
 package com.tpourjalali.farmsafe;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.ColorSpace;
 import android.graphics.drawable.Drawable;
@@ -57,14 +58,17 @@ public class CoursesFragment extends Fragment {
 
 
     private class CourseHolder extends RecyclerView.ViewHolder{
-        TextView mCourseTitle;
-        ImageView mCourseImage;
+        private TextView mCourseTitle;
+        private ImageView mCourseImage;
+
+        Course mCourse;
         public CourseHolder(View itemView) {
             super(itemView);
             mCourseImage = itemView.findViewById(R.id.course_item_image_view);
             mCourseTitle = itemView.findViewById(R.id.course_item_text_view);
         }
         public void bindCourse(Course course){
+            mCourse = course;
             mCourseTitle.setText(course.getCourseName());
             int drawableId = course.getImageResourceId();
             Drawable thumbnail = null;
@@ -98,6 +102,21 @@ public class CoursesFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mCourses.size();
+        }
+    }
+    private class CourseOnClickListener implements View.OnClickListener{
+        private int mCourseId;
+
+        public int getCourseId() {
+            return mCourseId;
+        }
+
+        public void setCourseId(int termId) {
+            mCourseId = termId;
+        }
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(getActivity(), )
         }
     }
 }
