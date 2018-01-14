@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 
 public class HomeFragment extends Fragment{
     private ImageButton mGlossaryButton;
+    private ImageButton mCoursesButton;
     public static HomeFragment newInstance() {
         //Bundle args = new Bundle();
         HomeFragment fragment = new HomeFragment();
@@ -36,10 +37,18 @@ public class HomeFragment extends Fragment{
 
     private void initViews(View V) {
         mGlossaryButton = V.findViewById(R.id.glossary_button);
+        mCoursesButton = V.findViewById(R.id.courses_button);
         mGlossaryButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), GlossaryActivity.class);
+                startActivity(i);
+            }
+        });
+        mCoursesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), CoursesActivity.class);
                 startActivity(i);
             }
         });

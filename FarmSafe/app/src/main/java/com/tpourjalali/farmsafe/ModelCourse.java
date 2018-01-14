@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.tpourjalali.farmsafe.database.DataBaseHelper;
 import com.tpourjalali.farmsafe.database.CourseCursorWrapper;
@@ -18,6 +19,7 @@ import java.util.List;
  */
 
 public class ModelCourse {
+    private static final String TAG ="ModelCourse";
     private Context mContext;
     private SQLiteDatabase mDatabase;
     private static ModelCourse mInstance;
@@ -60,6 +62,7 @@ public class ModelCourse {
     }
 
     private CourseCursorWrapper queryCourses(String whereClause, String[] whereArgs) {
+        Log.i(TAG, "query Courses called");
         Cursor cursor = mDatabase.query(
                 CourseTable.NAME,
                 null,

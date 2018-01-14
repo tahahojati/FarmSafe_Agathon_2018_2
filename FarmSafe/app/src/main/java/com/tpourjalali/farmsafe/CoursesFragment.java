@@ -49,9 +49,9 @@ public class CoursesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View V = inflater.inflate(R.layout.fragment_courses, container, false);
-        mRecyclerView = V.findViewById(R.id.courses_recycler_view);
+        mRecyclerView = (RecyclerView) V;//.findViewById(R.id.courses_recycler_view);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-
+        mRecyclerView.setAdapter(new CourseAdapter());
         return V;
     }
 
