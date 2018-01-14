@@ -19,8 +19,16 @@ public class Course {
 //
 //    }
 
+    public Course(String courseName) {
+        mCourseName = courseName;
+    }
+
     public String getCourseLanguage() {
         return mCourseLanguage;
+    }
+
+    public void setCourseLanguage(String courseLanguage) {
+        mCourseLanguage = courseLanguage;
     }
 
     public String getCourseName() {
