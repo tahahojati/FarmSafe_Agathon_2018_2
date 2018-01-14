@@ -14,7 +14,6 @@ public class Course {
     private Context mContext;
     private SQLiteDatabase mDatabase;
     private String mCourseLanguage;
-    private String mCourseId;
     private String mCourseName;
 //    private List<Course> mCourses;
 
@@ -33,9 +32,6 @@ public class Course {
         return mCourseLanguage;
     }
 
-    public String getCourseId() {
-        return mCourseId;
-    }
 
     public String getCourseName() {
         return mCourseName;

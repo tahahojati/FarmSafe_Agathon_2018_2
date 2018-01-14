@@ -22,7 +22,6 @@ public class CourseBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + CourseTable.NAME + "(" +
             " _id integer primary key autoincrement, " +
-            CourseTable.Cols.COURSE_ID + ", " +
             CourseTable.Cols.COURSE_NAME + ", " +
             CourseTable.Cols.LANGUAGE +
             ")"

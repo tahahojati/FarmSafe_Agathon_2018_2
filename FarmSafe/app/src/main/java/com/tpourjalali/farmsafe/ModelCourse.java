@@ -11,9 +11,8 @@ import com.tpourjalali.farmsafe.database.CourseDbSchema;
 public class ModelCourse {
     private ContentValues getContentValues(Course c) {
         ContentValues values = new ContentValues();
-        values.put(CourseDbSchema.CourseTable.Cols.COURSE_ID, c.getmCourseId());
-        values.put(CourseDbSchema.CourseTable.Cols.LANGUAGE, c.getmCourseLanguage());
-        values.put(CourseDbSchema.CourseTable.Cols.COURSE_NAME, c.getmCourseName());
+        values.put(CourseDbSchema.CourseTable.Cols.LANGUAGE, c.getCourseLanguage());
+        values.put(CourseDbSchema.CourseTable.Cols.COURSE_NAME, c.getCourseName());
 
         return values;
     }
