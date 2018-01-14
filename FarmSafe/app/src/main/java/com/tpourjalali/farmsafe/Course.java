@@ -11,10 +11,15 @@ public class Course {
     private Language mCourseLanguage;
     private String mCourseName;
     private int mId;
+    private int mImageResourceId;
     private ArrayList<CourseSectionBase> mSections;
 
     public void setCourseName(String courseName) {
         mCourseName = courseName;
+    }
+
+    public int getImageResourceId(){
+        return 0;
     }
 
     public int getId() {

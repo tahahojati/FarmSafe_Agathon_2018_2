@@ -19,6 +19,14 @@ import java.util.List;
 public class ModelCourse {
     private Context mContext;
     private SQLiteDatabase mDatabase;
+    private static ModelCourse mInstance;
+
+    public static ModelCourse getInstance(Context context){
+        if(mInstance == null){
+            mInstance = new ModelCourse(context.getApplicationContext());
+        }
+        return mInstance;
+    }
 
     private ModelCourse(Context context) {
         mContext = context.getApplicationContext();
