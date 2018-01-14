@@ -47,7 +47,7 @@ public class VideoFragment extends Fragment {
         mc.setAnchorView(mVideoView);
         mc.setMediaPlayer(mVideoView);
 
-        mVideoView.setVideoPath(VIDEO_FOLDER+"/gap_chinese.mp4");
+        mVideoView.setVideoPath("assets/"+VIDEO_FOLDER+"/gap_chinese.mp4");
         mVideoView.start();
 
         return V;

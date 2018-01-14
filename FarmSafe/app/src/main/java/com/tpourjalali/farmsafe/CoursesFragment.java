@@ -60,16 +60,20 @@ public class CoursesFragment extends Fragment {
     private class CourseHolder extends RecyclerView.ViewHolder{
         private TextView mCourseTitle;
         private ImageView mCourseImage;
+        private CourseOnClickListener mOnClickListener;
 
         Course mCourse;
         public CourseHolder(View itemView) {
             super(itemView);
+            mOnClickListener =new CourseOnClickListener();
+            itemView.setOnClickListener(mOnClickListener);
             mCourseImage = itemView.findViewById(R.id.course_item_image_view);
             mCourseTitle = itemView.findViewById(R.id.course_item_text_view);
         }
         public void bindCourse(Course course){
             mCourse = course;
             mCourseTitle.setText(course.getCourseName());
+            mOnClickListener.setCourseId(course.getId());
             Integer drawableId = mCourseModel.getCourseImageResourceId(course);
             if(drawableId == null) drawableId = -1;
             Drawable thumbnail = null;
