@@ -9,9 +9,10 @@ public class CourseDbSchema {
         public static final String NAME = "courses";
 
         public static final class Cols {
-//            public static final String COURSE_ID = "course_id";
+            public static final String COURSE_ID = "_id";
             public static final String LANGUAGE = "language";
             public static final String COURSE_NAME = "course_name";
+            public static final String SECTIONS = "sections";
         }
     }
 }

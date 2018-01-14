@@ -1,9 +1,6 @@
 package com.tpourjalali.farmsafe;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-
-import com.tpourjalali.farmsafe.database.CourseBaseHelper;
+import java.util.ArrayList;
 
 /**
  * Created by mschultz on 1/13/2018.
@@ -11,9 +8,20 @@ import com.tpourjalali.farmsafe.database.CourseBaseHelper;
 
 public class Course {
 //    private static
-    private String mCourseLanguage;
+    private Language mCourseLanguage;
     private String mCourseName;
-//    private List<Course> mCourses;
+    private int mId;
+    private ArrayList<CourseSectionBase> mSections;
+
+    public void setCourseName(String courseName) {
+        mCourseName = courseName;
+    }
+
+    public int getId() {
+        return mId;
+    }
+
+    //    private List<Course> mCourses;
 
 //    public static Course get(Context context) {
 //
@@ -23,11 +31,11 @@ public class Course {
         mCourseName = courseName;
     }
 
-    public String getCourseLanguage() {
+    public Language getCourseLanguage() {
         return mCourseLanguage;
     }
 
-    public void setCourseLanguage(String courseLanguage) {
+    public void setCourseLanguage(Language courseLanguage) {
         mCourseLanguage = courseLanguage;
     }
 

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.tpourjalali.farmsafe.database.CourseBaseHelper;
+import com.tpourjalali.farmsafe.database.DataBaseHelper;
 import com.tpourjalali.farmsafe.database.CourseCursorWrapper;
 import com.tpourjalali.farmsafe.database.CourseDbSchema;
 
@@ -22,7 +22,7 @@ public class ModelCourse {
 
     private ModelCourse(Context context) {
         mContext = context.getApplicationContext();
-        mDatabase = new CourseBaseHelper(mContext)
+        mDatabase = new DataBaseHelper(mContext)
                 .getWritableDatabase();
 //        mCourses = new ArrayList<>();
     }
