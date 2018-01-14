@@ -6,6 +6,7 @@ import android.content.Context;
 
 import com.tpourjalali.farmsafe.Course;
 import com.tpourjalali.farmsafe.database.CourseDbSchema.CourseTable;
+import com.tpourjalali.farmsafe.database.TermDbSchema.TermTable;
 
 /**
  * Created by mschultz on 1/13/2018.
@@ -27,6 +28,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             CourseTable.Cols.LANGUAGE + ", " +
                 CourseTable.Cols.SECTIONS + " blob"+
             ")"
+        );
+
+        db.execSQL("create table " + TermTable.NAME + "(" +
+                TermTable.Cols.TERM_ID + " integer primary key autoincrement, " +
+                TermTable.Cols.TERM + ", " +
+                TermTable.Cols.LANGUAGE + ", " +
+                TermTable.Cols.DEFINITION + ", " +
+                TermTable.Cols.IMAGE_ID +
+                ")"
         );
     }
 

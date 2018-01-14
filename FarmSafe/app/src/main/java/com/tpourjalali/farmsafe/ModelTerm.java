@@ -5,10 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.tpourjalali.farmsafe.database.DataBaseHelper;
 import com.tpourjalali.farmsafe.database.CourseCursorWrapper;
-import com.tpourjalali.farmsafe.database.CourseDbSchema;
 import com.tpourjalali.farmsafe.database.CourseDbSchema.CourseTable;
+import com.tpourjalali.farmsafe.database.DataBaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +16,11 @@ import java.util.List;
  * Created by mschultz on 1/13/2018.
  */
 
-public class ModelCourse {
+public class ModelTerm {
     private Context mContext;
     private SQLiteDatabase mDatabase;
-    private static ModelCourse mInstance;
 
-    public static ModelCourse getInstance(Context context){
-        if(mInstance == null){
-            mInstance = new ModelCourse(context.getApplicationContext());
-        }
-        return mInstance;
-    }
-
-    private ModelCourse(Context context) {
+    private ModelTerm(Context context) {
         mContext = context.getApplicationContext();
         mDatabase = new DataBaseHelper(mContext)
                 .getWritableDatabase();
