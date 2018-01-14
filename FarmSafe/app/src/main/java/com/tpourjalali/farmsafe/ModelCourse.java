@@ -1,7 +1,10 @@
 package com.tpourjalali.farmsafe;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
+import com.tpourjalali.farmsafe.database.CourseBaseHelper;
 import com.tpourjalali.farmsafe.database.CourseDbSchema;
 
 /**
@@ -9,6 +12,16 @@ import com.tpourjalali.farmsafe.database.CourseDbSchema;
  */
 
 public class ModelCourse {
+    private Context mContext;
+    private SQLiteDatabase mDatabase;
+
+    private ModelCourse(Context context) {
+        mContext = context.getApplicationContext();
+        mDatabase = new CourseBaseHelper(mContext)
+                .getWritableDatabase();
+//        mCourses = new ArrayList<>();
+    }
+
     private ContentValues getContentValues(Course c) {
         ContentValues values = new ContentValues();
         values.put(CourseDbSchema.CourseTable.Cols.LANGUAGE, c.getCourseLanguage());
@@ -19,5 +32,7 @@ public class ModelCourse {
 
     public void addCourse(Course c) {
         ContentValues values = getContentValues(c);
+
+        mDatabase.insert(CourseDbSchema.CourseTable.NAME, null, values);
     }
 }

@@ -11,8 +11,6 @@ import com.tpourjalali.farmsafe.database.CourseBaseHelper;
 
 public class Course {
 //    private static
-    private Context mContext;
-    private SQLiteDatabase mDatabase;
     private String mCourseLanguage;
     private String mCourseName;
 //    private List<Course> mCourses;
@@ -21,12 +19,7 @@ public class Course {
 //
 //    }
 
-    private Course(Context context) {
-        mContext = context.getApplicationContext();
-        mDatabase = new CourseBaseHelper(mContext)
-                .getWritableDatabase();
-//        mCourses = new ArrayList<>();
-    }
+
 
     public String getCourseLanguage() {
         return mCourseLanguage;
