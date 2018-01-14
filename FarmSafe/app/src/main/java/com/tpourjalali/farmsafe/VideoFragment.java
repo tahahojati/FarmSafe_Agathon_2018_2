@@ -40,15 +40,15 @@ public class VideoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View V = inflater.inflate(R.layout.fragment_video, container, false);
+        View V = inflater.inflate(R.layout.fragment_course_screenshot, container, false);
 
         mVideoView = V.findViewById(R.id.videoView);
-        MediaController mc = new MediaController(getActivity());
+        /*MediaController mc = new MediaController(getActivity());
         mc.setAnchorView(mVideoView);
         mc.setMediaPlayer(mVideoView);
 
         mVideoView.setVideoPath("assets/"+VIDEO_FOLDER+"/gap_chinese.mp4");
-        mVideoView.start();
+        mVideoView.start();*/
 
         return V;
     }
