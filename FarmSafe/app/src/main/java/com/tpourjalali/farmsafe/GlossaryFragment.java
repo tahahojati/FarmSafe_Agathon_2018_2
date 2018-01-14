@@ -1,6 +1,8 @@
 package com.tpourjalali.farmsafe;
 
+import android.app.AlertDialog;
 import android.app.Application;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
  */
 
 public class GlossaryFragment extends Fragment {
+    private static final String DIALOG_TERM = "TERM";
     private static String TAG = "GlossaryFragment";
     RecyclerView mRecyclerView;
     public static GlossaryFragment newInstance() {
@@ -44,9 +47,12 @@ public class GlossaryFragment extends Fragment {
     private class GlossaryTermHolder extends RecyclerView.ViewHolder{
         private Term mTerm;
         private TextView mTermTextView;
+        TermOnClickListener mTermOnClickListener;
         private ImageView mThumbNailImageView;
         public GlossaryTermHolder(View itemView) {
             super(itemView);
+            mTermOnClickListener = new TermOnClickListener();
+            itemView.setOnClickListener(mTermOnClickListener);
             mThumbNailImageView = itemView.findViewById(R.id.thumbnail_image);
             mTermTextView = itemView.findViewById(R.id.term);
         }
@@ -55,6 +61,7 @@ public class GlossaryFragment extends Fragment {
             mTermTextView.setText(mTerm.getTerm());
             int imageId = mTerm.getImageResourceId();
             Drawable image = null ;
+            mTermOnClickListener.setTermId(mTerm.getId());
             try {
                 if (imageId > 0)
                     image = getResources().getDrawable(imageId);
@@ -90,6 +97,23 @@ public class GlossaryFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mTerms.size();
+        }
+    }
+    private class TermOnClickListener implements View.OnClickListener{
+        private int mTermId;
+
+        public int getTermId() {
+            return mTermId;
+        }
+
+        public void setTermId(int termId) {
+            mTermId = termId;
+        }
+        @Override
+        public void onClick(View v) {
+            android.support.v4.app.FragmentManager fm = getFragmentManager();
+            GlossaryTermFragment frag = GlossaryTermFragment.newInstance(mTermId);
+            frag.show(fm, DIALOG_TERM);
         }
     }
 }

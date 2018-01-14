@@ -5,13 +5,13 @@ package com.tpourjalali.farmsafe;
  */
 
 public class Term {
-    private long mId;
+    private int mId;
     private Language mLanguage;
     private String mTerm;
     private String mDefinition;
     private int mImageId;
 
-    public Term(long id, Language language, String term, String definition, int imageId) {
+    public Term(int id, Language language, String term, String definition, int imageId) {
         mId = id;
         mLanguage = language;
         mTerm = term;
@@ -24,7 +24,7 @@ public class Term {
         return R.drawable.ic_dashboard_black_24dp;
     }
     //TODO: implement Constructors
-    public long getId() {
+    public int getId() {
         return mId;
     }
 
