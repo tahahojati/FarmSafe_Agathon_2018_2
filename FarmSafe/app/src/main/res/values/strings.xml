@@ -15,4 +15,5 @@
     <string name="title_notifications">Notifications</string>
 
     <string name="language">Language</string>
+    <string name="glossary_term_title">Glossary Term</string>
 </resources>
