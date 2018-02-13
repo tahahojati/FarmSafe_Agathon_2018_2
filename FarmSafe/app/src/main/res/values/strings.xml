@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FarmSafe</string>
+    <string name="app_name">Farm Akamai</string>
     <string name="main_menu_screen_title">Please choose a topic</string>
     <string name="main_menu_tile1_name">Course</string>
     <string name="main_menu_tile2_name">Glossary</string>
