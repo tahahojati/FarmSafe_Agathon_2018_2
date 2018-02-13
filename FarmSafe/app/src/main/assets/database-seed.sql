@@ -1,1 +1,1 @@
-insert into courses (language, course_name, _id) values ('English', 'life course', 1),('English', 'farm course', 2),('English', 'protect yourself from pesticides', 3),('English', 'growth course', 4);
+insert into courses (language, course_name, _id) values ('English', 'protect yourself from pesticides', 1),('English', 'access roads on pacific island farms', 2),('English', 'private 1 general agricultural pest control', 3),('English', 'private 2 agricultural fumigation pest control', 4);
