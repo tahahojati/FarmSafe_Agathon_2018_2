@@ -1,1 +1,1 @@
-insert into courses (language, course_name, _id) values ('English', 'life course', 1),('English', 'farm course', 2),('English', 'other course', 3),('English', 'growth course', 4);
+insert into courses (language, course_name, _id) values ('English', 'life course', 1),('English', 'farm course', 2),('English', 'protect yourself from pesticides', 3),('English', 'growth course', 4);
